@@ -4,14 +4,21 @@
 
 
 
-const decrementBtn = document.querySelector('.button" [data-action="decrement"]');
-console.log("decrementBtn", decrementBtn);
-const incrementBtn = document.querySelector('"button" [data-action="increment"]');
-console.log("incrementBtn", increment);
+const decrementBtn = document.querySelector('[data-action="decrement"]');
+const valueRef = document.querySelector('#value');
+const incrementBtn = document.querySelector('[data-action="increment"]');
 
-decrementBtn.addEventListener('click', () => {
-    console.log("Click");
-})
-   incrementBtn.addEventListener('click', () => {
-    console.log("Click"); 
-})
+let counterValue = 0;
+decrementBtn.addEventListener('click', onMouseEnter);
+    
+
+incrementBtn.addEventListener('click', onMouseLeave);
+    
+    function onMouseEnter() {
+        counterValue -= 1;
+        valueRef.textContent = counterValue;
+    };
+    function onMouseLeave() {
+      counterValue += 1;
+        valueRef.textContent = counterValue;  
+    };

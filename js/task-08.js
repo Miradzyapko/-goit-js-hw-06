@@ -8,8 +8,15 @@ console.log(form);
 form.addEventListener('submit', onFormSubmit);
 function onFormSubmit(event) {
     event.preventDefault();
-    const formElements = event.currentTarget.elements;
-    console.dir(formElements);
+     const {elements: { email, password }
+  } = event.currentTarget;
 
+  if (email.value === "" || password.value === "") {
+    return console.log("alert Please fill in all the fields!");
+  }
 
+  
+  event.currentTarget.reset();
 }
+
+
